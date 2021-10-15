@@ -7,7 +7,7 @@ using namespace std;
 
 int main(void){
 	cin.tie(0);cout.tie(0);
-    ios_base::sync_with_stdio(false);
+    	ios_base::sync_with_stdio(false);
 
 	int n, k;
 	long long sumNum=0; 
