@@ -106,12 +106,103 @@
 
 ### 조건문 
 
+- if, elif, else 
+- **논리 연산자** : `and`, `or`, `not` 단어 직접 입력 
+- **존재 여부 (in 리스트, 튜플, 문자열, 딕셔너리)** : `in`, `not in` 
+- `pass` : 아무것도 처리하고 싶지 않을 때 
+
+  ex) 디버깅 과정에서 조건문 처리 부분 비워놓고 싶은 경우 
+  
+- **조건부 표현식** : if~else 한 줄에 작성 가능 
+  ```python 
+  score = 85
+  result = "Success" if score>=80 else "Fail" 
+  print(result) 
+  > Success
+  ```
+  
+- 조건문 내 부등식 → 수학의 부등식 그대로 사용 가능 `3 < 4 < 5` 
 
 ### 반복문 
 
+- 코테에서는 `while`문보다 `for`문이 간결한 경우가 더 많음 
+- `range(start, end+1)` : for문에서 연속적인 값 차례대로 순회할 때 
+  ```python 
+  sum=0
+  for i in range(1, 10):
+    result += i 
+  print(sum)
+  > 45
+  ```
 
 ### 함수와 람다 표현식 
 
+- 파라미터의 변수를 직접 지정할 수 있음 
+  ```python 
+  def add(a,b) :
+    print('result : ', a + b) 
+  
+  add(b=3, a=7)   # 매개변수의 순서 달라도 OK 
+  > result : 10
+  ```
+- `global` : 전역변수 함수 내에서 사용할 때 선언 
+- 함수는 여러 개의 return 값을 가질 수 있음 → 묶여져서 한 번에 반환(packing) 
+- **람다 표현식** : 
+  - 특정한 기능을 수행하는 함수를 한 줄에 작성할 수 있음 
+  ```python 
+  print((lambda a, b : a+b)(3,7)) 
+  > 10 
+  ``` 
+  - 내장 함수에서 잘 사용됨 
+  ```python 
+  array = [('A', 50),('B', 32),('C', 74)]
+  print(sorted(array, key=lambda x : x[1]))    # key는 정렬의 기준이 되는 원소 
+  > [('B', 32),('A', 50),('C', 74)]
+  ```
 
 ### 자주 사용되는 표준 라이브러리 
+
+- 내장함수 : 기본적인 함수들 
+  - `sum()`, `min()`, `max()`
+  - `eval()` : 수식을 계산해서 출력 
+    ```python 
+    print(eval("(3+5)*7")
+    > 56
+    ```
+  - `sorted()`, `sorted() with key`
+- `itertools` : 반복되는 형태의 데이터 처리하기 위한 기능 제공 
+  - 순열
+    ```python 
+    from itertools import permutations 
+    
+    permutations(list, n개 골라)
+    ``` 
+  - 조합 
+    ```python 
+    from itertools import combinations
+    ```
+  - 중복순열, 중복조합 
+    ```python 
+    from itertools import product 
+    from itertools import combinations_with_replacement
+    ```
+- `heapq` : 힙 자료구조 제공. 우선순위 큐 구현 위해 사용 
+- `bisect` : 이진탐색 기능 제공 
+- `collections` : deque, counter 등의 자료구조 포함 
+  - `counter` : 등장 횟수를 세는 기능 제공. 리스트같은 객체 내의 원소가 몇 번씩 등장했는지 알려줌 
+  ```python 
+  from collections import Counter 
+  
+  counter = Counter([1, 2, 2, 2, 3, 4, 4]) 
+  print(counter[1]) 
+  print(counter[4]) 
+  print(dict(counter))   # 사전 자료형으로 반환 
+  > 1 
+  > 2 
+  > {1 : 1, 2 : 3, 3 : 1, 4 : 2}
+  ``` 
+- `math` : 수학적인 기능 제공 
+  - 팩토리얼, 제곱근, 최대 공약수, 삼각함수, 파이 등등... 
+  - `gcd()` : 최대 공약수 구하기 
+  - `lcm()` : 최소 공배수 구하기 
 
