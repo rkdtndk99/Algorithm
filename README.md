@@ -12,3 +12,5 @@
 - N = 100,000 : O(NlogN)
 - N = 10,000,000 : O(N) 
 
+## 개념 공부 
+1. [그리디 & 구현](/StudyNotes/Greedy.md)
