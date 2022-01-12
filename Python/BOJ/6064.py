@@ -1,10 +1,10 @@
 num = int(input())
 for _ in range(num):
     m, n, x, y = map(int, input().split())
-    ans = -1
+    answer = -1
     while x < m*n:
         if(x-y) % n == 0:
-            ans = x
+            answer = x
             break
         x += m
-    print(ans)
+    print(answer)
