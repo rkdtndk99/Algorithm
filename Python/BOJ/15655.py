@@ -1,0 +1,9 @@
+from itertools import combinations
+import sys
+input = lambda : sys.stdin.readline().strip()
+
+N, M = map(int, input().split())
+arr = sorted(list(map(int, input().split())))
+new = list(combinations(arr, M))
+for i in new:
+    print(' '.join(list(map(str, i))))
