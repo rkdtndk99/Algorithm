@@ -3,33 +3,33 @@ import sys
 input = lambda: sys.stdin.readline().strip()
 
 
-def bfs(x, y):
-    global answer
-    queue = deque([(x, y)])
-    if graph[x][y] == -1:
-        return
+def bfs():
+    day = 0
     while queue:
-        cx, cy = queue.popleft()
-        for dx, dy in [(-1,0), (1,0), (0,1), (0,-1)]:
-            nx, ny = cx + dx, cy + dy
-            if nx > m or nx < 0 or ny > n or ny < 0:
-                continue
-            if graph[nx][ny] == 0:
-                queue.append((nx, ny))
-                graph[nx][ny] = 1
-                answer += 1
+        day += 1
+        for _ in range(len(queue)):
+            x, y = queue.popleft()
+            for dx, dy in [(-1, 0), (1, 0), (0, 1), (0, -1)]:
+                nx, ny = x + dx, y + dy
+                if 0 <= nx < n and 0 <= ny < m and graph[nx][ny] == 0:
+                    graph[nx][ny] = 1
+                    queue.append((nx, ny))
+
+    for i in graph:
+        for tomato in i:
+            if tomato == 0:
+                return -1
+
+    return day - 1
 
 
 m, n = map(int, input().split())
-graph = [[-1] * m for _ in range(n)]
-for i in range(n):
-    graph[i] = list(map(int, input().split()))
-
-
-answer = -1
+graph = [list(map(int, input().split())) for _ in range(n)]
+queue = deque([])
+answer = 0
 for i in range(n):
     for j in range(m):
-        if graph[i][j] != -1:
-            bfs(i, j)
+        if graph[i][j] == 1:
+            queue.append([i, j])
 
-# [print(line) for line in graph]
+print(bfs())
