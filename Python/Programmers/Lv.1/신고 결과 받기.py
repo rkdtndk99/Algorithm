@@ -2,10 +2,11 @@
 def solution(id_list, report, k):
     # 받을 이메일 개수
     answer = {id: 0 for id in id_list}
+    # key = 신고 당함, value : 신고함
+    r = {id: [] for id in id_list}
 
     # 리스트 내 중복되는 값 무시하기 위해서
     report = list(set(report))
-    r = {id: [] for id in id_list}
 
     for i in range(len(report)):
         user, warn = report[i].split()
