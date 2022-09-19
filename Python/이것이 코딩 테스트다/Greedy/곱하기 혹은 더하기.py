@@ -15,7 +15,7 @@ while i < len(str):
 
 print(answer)
 
-# 22-09-19 풀이
+# 2022.09.19 풀이
 s = input()
 nums = list(map(int,list(s)))
 answer = nums[0]

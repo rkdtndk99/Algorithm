@@ -1,7 +1,7 @@
 import sys
 input = lambda : sys.stdin.readline().strip()
 
-# 22-09-19 풀이
+# 2022.09.19 풀이
 n = int(input())
 guild = list(map(int, input().split()))
 guild.sort()

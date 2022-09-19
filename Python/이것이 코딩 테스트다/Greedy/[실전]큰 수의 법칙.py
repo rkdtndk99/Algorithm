@@ -19,7 +19,7 @@ while m > 0:
 
 print(answer)
 
-# 22-09-19 풀이
+# 2022.09.19 풀이
 n, m, k = map(int, input().split())
 nums = list(map(int, input().split()))
 nums.sort()

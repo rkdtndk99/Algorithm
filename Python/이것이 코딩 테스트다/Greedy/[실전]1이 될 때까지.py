@@ -1,6 +1,7 @@
 import sys
 input = lambda: sys.stdin.readline().strip()
 
+# 2022.09.19 풀이
 n, k = map(int, input().split())
 cnt = 0
 
