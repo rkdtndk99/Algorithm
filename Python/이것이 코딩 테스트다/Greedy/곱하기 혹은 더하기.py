@@ -15,6 +15,19 @@ while i < len(str):
 
 print(answer)
 
+# 22-09-19 풀이
+s = input()
+nums = list(map(int,list(s)))
+answer = nums[0]
+
+for i in range(1,len(nums)):
+	if nums[i] <= 1 or answer <= 1:
+		answer += nums[i]
+	else:
+		answer *= nums[i]
+
+print(answer)
+
 # 정답
 data = input()
 

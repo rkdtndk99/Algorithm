@@ -1,18 +1,21 @@
 import sys
 input = lambda : sys.stdin.readline().strip()
 
-# 내 풀이
+# 22-09-19 풀이
 n = int(input())
-arr = list(map(int, input().split()))
-arr.sort()
-count = 0
+guild = list(map(int, input().split()))
+guild.sort()
+cnt, idx, temp = 0, 0, 0
 
-while arr:
-    for _ in range(arr[-1]):
-        arr.pop()
-    count += 1
+while True:
+	temp = guild[idx]
+	idx += temp
+	if guild[idx-1] == temp:
+		cnt += 1
+	else:
+		break
 
-print(count)
+print(cnt)
 
 # 정답
 n = int(input())
