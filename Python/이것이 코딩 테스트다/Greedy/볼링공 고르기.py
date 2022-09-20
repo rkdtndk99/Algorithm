@@ -13,6 +13,19 @@ for i in range(1, m+1):
 
 print(count)
 
+# 2022.09.20 풀이
+from itertools import combinations
+
+n, m = map(int, input().split())
+arr = list(map(int, input().split()))
+combi = list(combinations(arr, 2))
+n = len(combi)
+
+for a, b in combi:
+	if a == b:
+		n -= 1
+print(n)
+
 # 정답
 n, m = map(int, input().split())
 data = list(map(int, input().split()))
