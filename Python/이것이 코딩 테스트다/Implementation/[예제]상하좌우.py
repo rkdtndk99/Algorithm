@@ -30,6 +30,32 @@ for d in arr:
 
 print(x, y)
 
+
+# 2022.09.28 풀이
+n = int(input())
+dir = list(input().split())
+x, y = 1, 1
+
+for d in dir:
+	if d == "R":
+		dx = 0
+		dy = 1
+	if d == "L":
+		dx = 0
+		dy = -1
+	if d == "U":
+		dx = -1
+		dy = 0
+	if d == "D":
+		dx = 1
+		dy = 0
+
+	nx, ny = x + dx, y + dy
+	if 0 < nx < n and 0 < ny < n:
+		x = nx
+		y = ny
+
+print(x, y)
 # 정답
 n = int(input())
 x, y = 1, 1

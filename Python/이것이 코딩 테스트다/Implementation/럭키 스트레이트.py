@@ -16,6 +16,17 @@ if ff == bb :
 else:
     print("READY")
 
+# 2022.09.28 풀이
+score = list(map(int, list(input())))
+half = len(score)//2
+front = score[:half]
+back = score[half:]
+if sum(front) == sum(back):
+	print("LUCKY")
+else:
+	print("READY")
+
+
 # 정답
 n = input()
 length = len(n) # 점수 값의 총 자릿수
