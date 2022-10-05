@@ -82,3 +82,9 @@ def bfs(graph, start, visited):
         queue.append(i)
         visited[i] = True
 ```
+
+## DFS vs BFS 
+|   |DFS|BFS|
+|---|---|---|
+|동작원리|stack|queue|
+|구현방법|재귀 함수|큐 자료구조|
